@@ -1,5 +1,9 @@
 package com.example.notasestudiantes.entity;
 
+import java.math.BigDecimal;
+import java.sql.Date;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,5 +26,8 @@ public class Nota {
     @ManyToOne
     @JoinColumn(name = "materia_id")
     private Materia materia;
+    private BigDecimal nota;
+    @Column(name = "fecha_nota")
+    private Date fechaNota;
 
 }
