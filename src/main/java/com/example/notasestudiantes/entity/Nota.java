@@ -1,8 +1,5 @@
 package com.example.notasestudiantes.entity;
 
-import java.sql.Date;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,8 +11,8 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "tbl_inscripcion")
-public class Inscripcion {
+@Table(name = "tbl_nota")
+public class Nota {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,6 +22,5 @@ public class Inscripcion {
     @ManyToOne
     @JoinColumn(name = "materia_id")
     private Materia materia;
-    @Column(name="fecha_inscripcion")
-    private Date fechaInscripcion;
+
 }
