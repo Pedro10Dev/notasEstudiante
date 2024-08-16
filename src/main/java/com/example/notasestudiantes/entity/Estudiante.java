@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,8 +25,8 @@ public class Estudiante {
     @OneToOne
     @JoinColumn(name="persona_id")
     private Persona persona;
-    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL,fetch= FetchType.LAZY)
     private List<Inscripcion> inscripcion;
-    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "estudiante", cascade = CascadeType.ALL,fetch= FetchType.LAZY)
     private List<Nota> nota;
 }

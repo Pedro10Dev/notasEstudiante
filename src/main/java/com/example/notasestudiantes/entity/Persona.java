@@ -2,6 +2,8 @@ package com.example.notasestudiantes.entity;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,8 +33,10 @@ public class Persona {
     @Column(name="fecha_nacimiento")
     private Date fechaNacimiento;
     @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Profesor profesor;
     @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonIgnore
     private Estudiante estudiante;
 
 
