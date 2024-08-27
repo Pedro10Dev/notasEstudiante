@@ -49,7 +49,7 @@ public class EstudianteController {
         return estudianteServivio.saveOrUpdateEstudiante(estudiante, persona);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{estudianteId}")
     public void deleteEstudiante(@PathVariable("{estudianteId") Long estudianteId){
         estudianteServivio.deleteEstudiante(estudianteId);
     }
